@@ -1,4 +1,4 @@
-from .models import Post, Comment
+from .models import Post
 from .serializers import PostSerializer, CommentSerializer
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets

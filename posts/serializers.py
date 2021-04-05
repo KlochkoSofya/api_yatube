@@ -3,7 +3,7 @@ from .models import Post, Comment
 
 
 class PostSerializer(serializers.ModelSerializer):
-    author = serializers.StringRelatedField(read_only=True)
+    author = serializers.SlugRelatedField(slug_field='username', read_only=True)
 
     class Meta:
         fields = '__all__'
@@ -12,7 +12,7 @@ class PostSerializer(serializers.ModelSerializer):
 
 
 class CommentSerializer(serializers.ModelSerializer):
-    author = serializers.StringRelatedField(read_only=True)
+    author = serializers.SlugRelatedField(slug_field='username', read_only=True)
 
     class Meta:
         fields = '__all__'
